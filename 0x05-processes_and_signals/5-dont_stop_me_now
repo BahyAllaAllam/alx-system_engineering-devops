@@ -3,8 +3,5 @@
 pid=$(pgrep -f "4-to_infinity_and_beyond")
 
 if [ -n "$pid" ]; then
-    echo "Stopping the 4-to_infinity_and_beyond process with PID $pid"
     kill "$pid"
-else
-    echo "4-to_infinity_and_beyond process not found"
 fi
