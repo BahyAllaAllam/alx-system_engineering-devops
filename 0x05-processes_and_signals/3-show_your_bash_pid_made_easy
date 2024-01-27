@@ -3,7 +3,7 @@
 for pid in /proc/*/cmdline; do
     if grep -q "bash" "$pid"; then
         current_pid=$(echo "$pid" | cut -d '/' -f 3)
-        process_name=$(tr '\0' ' ' < "/proc/$current_pid/cmdline" | awk '{print $NF}')
+        process_name=$(tr '\0' ' ' < "/proc/$current_pid/cmdline" | awk '{print $NF}' | xargs basename)
         echo "$current_pid $process_name"
     fi
 done
