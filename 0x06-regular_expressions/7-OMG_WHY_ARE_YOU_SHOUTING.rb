@@ -2,10 +2,10 @@
 
 def match_pattern(text)
   regex = /[A-Z]/
-  match = text.match(regex)
+  matches = text.scan(regex)
 
-  if match
-    puts match.to_s
+  if matches.any?
+    puts matches.join
   end
 end
 
