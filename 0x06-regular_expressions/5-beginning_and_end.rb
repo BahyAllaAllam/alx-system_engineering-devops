@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 def match_pattern(text)
-  regex = /h.*n/
+  regex = /h.n/
   match = text.match(regex)
 
   if match
