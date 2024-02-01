@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Use 'ifconfig' command to get all active IPv4 addresses
+ip_addresses2=$(ip -4 addr show | grep inet | awk '{print $2}' | cut -d'/' -f1)
+
+echo "$ip_addresses2"
