@@ -6,7 +6,7 @@ sed -i '/localhost/d' /etc/hosts
 sed -i '/facebook.com/d' /etc/hosts
 # sudo sed -i '/^127.0.0.2[[:space:]]\+localhost/d' /etc/hosts
 # sudo sed -i '/^127.0.0.1[[:space:]]\+localhost/ s/$/ 127.0.0.2/' /etc/hosts
-echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts
+echo "127.0.0.2       localhost" | sudo tee -a /etc/hosts
 
 
 sudo sh -c 'echo "8.8.8.8 facebook.com" >> /etc/hosts'
