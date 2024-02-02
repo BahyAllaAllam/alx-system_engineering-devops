@@ -2,8 +2,8 @@
 # Backup the original /etc/hosts file
 sudo cp /etc/hosts /etc/hosts.bak
 
-sudo sed -i 's/127.0.0.1[ \t]\+ localhost/ s/$/ 127.0.0.2/' /etc/hosts
-sudo sed -i '/127.0.1.1[ \t]\+/ s/$/ 127.0.0.1/' /etc/hosts
+sudo sed -i '/127.0.0.1[[:space:]]\+localhost/ s/$/ 127.0.0.2/' /etc/hosts
+sudo sed -i '/127.0.1.1[[:space:]]\+/ s/$/ 127.0.0.1/' /etc/hosts
 sudo sh -c 'echo "8.8.8.8 facebook.com" >> /etc/hosts'
 
 sudo service networking restart
