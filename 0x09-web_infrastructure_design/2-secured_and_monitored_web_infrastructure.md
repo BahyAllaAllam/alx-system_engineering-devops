@@ -1,6 +1,6 @@
 # Secured and Monitored Web Infrastructure
 
-![Image of a secured and monitored infrastructure](2-secured_and_monitored_web_infrastructure.PNG)
+![Image of a secured and monitored infrastructure](https://github.com/BahyAllaAllam/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/2.%20Secured%20and%20monitored%20web%20infrastructure%20.png)
 
 ## Description
 
