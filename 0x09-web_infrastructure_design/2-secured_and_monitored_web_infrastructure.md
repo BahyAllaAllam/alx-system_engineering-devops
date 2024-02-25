@@ -46,13 +46,3 @@ This is a 3-server web infrastructure that is secured, monitored, and serves enc
 2. **Single MySQL Server Accepting Writes**: Having only one MySQL server capable of accepting write operations introduces a single point of failure. If this server goes down, write operations to the database will be unavailable, leading to downtime and potential data loss.
 
 3. **Uniformity of Server Components**: Having servers with all the same components (database, web server, and application server) might lead to a lack of diversity in the infrastructure. If a vulnerability affects one component, it could potentially impact all servers in the infrastructure simultaneously.
-
-## Recommendations
-
-- **SSL Offloading**: Consider implementing SSL offloading at the load balancer level to reduce the risk of exposing sensitive data on the internal network.
-
-- **MySQL Replication and Sharding**: Implement MySQL replication and sharding to distribute write operations across multiple database servers, improving fault tolerance and scalability.
-
-- **Component Diversity**: Introduce diversity in server components by using different software versions or configurations to mitigate the impact of vulnerabilities affecting a single component.
-
-By addressing these issues and implementing best practices for web infrastructure design, you can create a more secure, scalable, and resilient architecture for hosting www.foobar.com.
