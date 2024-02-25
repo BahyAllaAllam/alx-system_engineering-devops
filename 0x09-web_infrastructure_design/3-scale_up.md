@@ -1,6 +1,6 @@
 # Scaled Up Web Infrastructure
 
-![Image of a scaled up web infrastructure]([3-scale_up.png](https://github.com/BahyAllaAllam/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/3-scale_up.png))
+![Image of a scaled up web infrastructure](https://github.com/BahyAllaAllam/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/3-scale_up.png)
 
 ## Description
 
