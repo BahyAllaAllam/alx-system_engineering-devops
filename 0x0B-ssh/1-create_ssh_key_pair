@@ -5,12 +5,4 @@
 KEY_NAME="school"
 PASSPHRASE="betty"
 ssh-keygen -t rsa -b 4096 -f "$KEY_NAME" -N "$PASSPHRASE"
-echo "Generating public/private rsa key pair."
-echo "Your identification has been saved in $KEY_NAME."
-echo "Your public key has been saved in $KEY_NAME.pub."
-echo "The key fingerprint is:"
-ssh-keygen -lf "$KEY_NAME"
-echo "The key's randomart image is:"
-ssh-keygen -lvf "$KEY_NAME"
-mv "$KEY_NAME" "$KEY_NAME.pub" .
 
