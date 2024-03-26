@@ -4,7 +4,7 @@
 apt-get update
 apt-get install -y nginx
 
-echo "server {
+printf "server {
     listen 80;
     server_name _;
 
