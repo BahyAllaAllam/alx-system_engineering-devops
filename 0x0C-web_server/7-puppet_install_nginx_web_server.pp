@@ -1,49 +1,27 @@
-# Define thenecessary variables
-$nginx_package = 'nginx'
-$nginx_service = 'nginx'
-$nginx_config_file = '/etc/nginx/sites-available/default'
-$nginx_root_dir = '/var/www/html'
-$nginx_index_file = 'index.html'
-$redirected_page_url = 'https://www.example.com/redirected_page'
+# Setup New Ubuntu server with nginx
 
-# Install Nginx package
-package { $nginx_package:
-  ensure => installed,
+exec { 'update system':
+  command => '/usr/bin/apt-get update',
 }
 
-# Ensure Nginx service is running and enabled
-service { $nginx_service:
-  ensure  => running,
-  enable  => true,
-  require => Package[$nginx_package],
+package { 'nginx':
+  ensure  => 'installed',
+  require => Exec['update system'],
 }
 
-# Configure Nginx server block
-file { $nginx_config_file:
+file { '/var/www/html/index.html':
   ensure  => file,
-  content => "
-    server {
-      listen 80 default_server;
-      listen [::]:80 default_server;
-      root ${nginx_root_dir};
-      index ${nginx_index_file};
-      server_name _;
-
-      location / {
-        try_files $uri $uri/ =404;
-      }
-
-      location /redirect_me {
-        return 301 ${redirected_page_url};
-      }
-    }
-  ",
-  notify  => Service[$nginx_service],
+  content => 'Hello World!',
 }
 
-# Create HTML file for the root page
-file { "${nginx_root_dir}/${nginx_index_file}":
-  ensure  => file,
-  content => "Hello World!\n",
+exec { 'redirect_me':
+  command => 'sed -i "24i\ rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default',
+  require => Package['nginx'],
+  path    => ['/bin', '/usr/bin'],
+}
+
+service { 'nginx':
+  ensure  => 'running',
+  require => Package['nginx'],
 }
 
